@@ -1,0 +1,11 @@
+pyramid
+psycopg2-binary
+sqlalchemy
+alembic
+pyramid_tm
+pyramid_retry
+waitress
+cornice
+passlib[bcrypt]
+pyramid_jwt
+# Add other dependencies here

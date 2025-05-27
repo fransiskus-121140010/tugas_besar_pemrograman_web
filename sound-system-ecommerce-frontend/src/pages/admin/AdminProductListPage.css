@@ -1,0 +1,186 @@
+/* src/pages/admin/AdminProductListPage.css */
+.admin-product-list-page .admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.admin-product-list-page .admin-header h2 {
+  margin: 0;
+  color: var(--color-text-primary); /* Black for heading */
+}
+
+/* General admin button styling for this page */
+.admin-button {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 0.9rem;
+  font-weight: 500; /* Added font weight */
+  margin-left: 5px;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.admin-button:first-child {
+  margin-left: 0;
+}
+
+.add-product-button {
+  background-color: var(--color-button-primary-bg); /* Primary button (black) */
+  color: var(--color-button-primary-text);       /* Light text */
+}
+.add-product-button:hover {
+  background-color: var(--color-button-primary-hover-bg); /* Darker gray hover */
+}
+
+.edit-button {
+  background-color: var(--color-button-secondary-bg); /* Secondary button (accent medium) */
+  color: var(--color-button-secondary-text);      /* Black text */
+  margin-bottom: 5px; /* For stacking on mobile */
+}
+.edit-button:hover {
+  background-color: var(--color-button-secondary-hover-bg); /* Darker accent medium */
+}
+
+.delete-button {
+  background-color: var(--color-button-danger-bg); /* Danger button */
+  color: var(--color-button-danger-text);
+}
+.delete-button:hover {
+  background-color: var(--color-button-danger-hover-bg);
+}
+
+.admin-product-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08); /* Adjusted shadow */
+  background-color: var(--color-background-card); /* Card background for table area */
+  border: 1px solid var(--color-border-light); /* Light border around table */
+  border-radius: 4px; /* Optional: rounded corners for the table */
+  overflow: hidden; /* To make border-radius clip th/td backgrounds */
+}
+
+.admin-product-table th,
+.admin-product-table td {
+  border: 1px solid var(--color-border-light); /* Light border for cells */
+  padding: 10px 12px;
+  text-align: left;
+  vertical-align: middle;
+  color: var(--color-text-primary); /* Black text for table content */
+}
+
+.admin-product-table th {
+  background-color: var(--color-accent-medium); /* Muted beige for table headers */
+  color: var(--color-text-on-light-accent); /* Black text on accent (or text-primary) */
+  font-weight: 600;
+  border-bottom: 2px solid var(--color-border); /* Stronger border below headers */
+}
+
+.admin-product-table tr:nth-child(even) {
+  background-color: var(--color-background-main); /* Very light gray for even rows, to contrast with card bg */
+}
+
+.admin-product-table tr:hover {
+  background-color: #d8d5cb; /* A slightly darker shade of EAE4D5 (bg-card) for hover */
+}
+
+.product-list-image {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid var(--color-border-light); /* Light border for image */
+}
+
+.admin-product-table .actions-cell { 
+  text-align: center;
+  min-width: 140px; 
+}
+
+/* --- Responsive Table Styles --- */
+@media (max-width: 768px) { 
+  .responsive-admin-table thead {
+    display: none;
+  }
+
+  .responsive-admin-table tr {
+    display: block; 
+    margin-bottom: 15px;
+    border: 1px solid var(--color-border); /* Accent border for cards */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    border-radius: 4px; 
+    padding: 10px; 
+    background-color: var(--color-background-card); /* Ensure card background */
+  }
+  
+  .responsive-admin-table td {
+    display: block; 
+    text-align: right; 
+    padding-left: 50%; 
+    position: relative; 
+    border-bottom: 1px dotted var(--color-border-light); /* Lighter dotted separator */
+    padding-top: 8px;
+    padding-bottom: 8px;
+    color: var(--color-text-primary); /* Ensure text color */
+  }
+
+  .responsive-admin-table td:last-child {
+    border-bottom: none; 
+  }
+
+  .responsive-admin-table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 10px; 
+    width: calc(50% - 20px); 
+    padding-right: 10px; 
+    font-weight: bold;
+    text-align: left; 
+    white-space: nowrap; 
+    color: var(--color-text-secondary); /* Secondary color for labels */
+  }
+
+  .responsive-admin-table .product-list-image {
+    display: block; 
+    margin-left: auto; 
+    margin-right: 0;  
+  }
+
+  .responsive-admin-table .actions-cell {
+    text-align: center; 
+    padding-left: 10px; 
+  }
+  .responsive-admin-table .actions-cell::before {
+    content: ""; 
+  }
+  .responsive-admin-table .actions-cell .admin-button {
+    display: inline-block; 
+    width: auto; 
+    margin: 5px; 
+  }
+}
+
+@media (max-width: 480px) {
+    .admin-product-list-page .admin-header {
+        flex-direction: column;
+        align-items: stretch; 
+        gap: 10px;
+    }
+    .admin-product-list-page .admin-header .add-product-button {
+        width: 100%;
+        margin-left: 0;
+        box-sizing: border-box;
+    }
+    .responsive-admin-table td {
+        padding-left: 40%; 
+    }
+    .responsive-admin-table td::before {
+        width: calc(40% - 15px); 
+        font-size: 0.9em; 
+    }
+}

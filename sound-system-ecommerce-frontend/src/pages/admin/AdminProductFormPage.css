@@ -1,0 +1,155 @@
+/* src/pages/admin/AdminProductFormPage.css */
+.admin-product-form-page .admin-page-container { /* Assuming this class is on a wrapper div in AdminProductFormPage.js */
+  padding: 20px;
+  /* background-color: var(--color-background-main); /* Set page background */
+}
+
+.admin-product-form-page h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 1.6rem;
+  color: var(--color-text-primary); /* Black for heading */
+}
+
+.product-form {
+  background-color: var(--color-background-card); /* Card background for the form */
+  padding: 25px 30px; 
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08); /* Adjusted shadow */
+  max-width: 700px; 
+  margin: 0 auto; 
+  box-sizing: border-box;
+  border: 1px solid var(--color-border-light); /* Subtle border for the form card */
+}
+
+.product-form .form-group {
+  margin-bottom: 20px;
+}
+
+.product-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: var(--color-text-secondary); /* Secondary text for labels */
+  font-size: 0.95rem;
+}
+
+.product-form .required-asterisk {
+  color: var(--color-button-danger-bg); /* Using danger color for asterisk, or define a specific error/warning color */
+  margin-left: 2px;
+}
+
+.product-form input[type="text"],
+.product-form input[type="number"],
+.product-form textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--color-border); /* Accent border for inputs */
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 1rem;
+  background-color: var(--color-background-main); /* Light background for inputs */
+  color: var(--color-text-primary); /* Black text in inputs */
+  transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.product-form input[type="text"]:focus,
+.product-form input[type="number"]:focus,
+.product-form textarea:focus {
+  border-color: var(--color-accent-medium); /* Accent for focus border */
+  outline: none;
+  box-shadow: 0 0 0 0.1rem rgba(182, 176, 159, 0.25); /* Shadow based on accent medium */
+}
+
+.product-form textarea {
+  resize: vertical; 
+  min-height: 100px;
+}
+
+.form-error-message { 
+  background-color: var(--color-error-bg);   /* Use error variables */
+  color: var(--color-error-text);
+  border: 1px solid var(--color-error-text); /* Or a lighter border */
+  padding: 10px 15px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.product-form .form-actions {
+  margin-top: 30px;
+  display: flex;
+  justify-content: flex-end; 
+  gap: 10px; 
+}
+
+.product-form .admin-button { /* General style for buttons in this form */
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500; /* Added font weight */
+  transition: background-color 0.3s ease;
+}
+
+.product-form .save-button {
+  background-color: var(--color-button-primary-bg); /* Primary button style for save */
+  color: var(--color-button-primary-text);
+}
+.product-form .save-button:hover {
+  background-color: var(--color-button-primary-hover-bg);
+}
+
+.product-form .cancel-button {
+  background-color: var(--color-button-secondary-bg); /* Secondary button style for cancel */
+  color: var(--color-button-secondary-text);
+}
+.product-form .cancel-button:hover {
+  background-color: var(--color-button-secondary-hover-bg);
+}
+
+/* --- Responsive adjustments for Admin Product Form Page --- */
+@media (max-width: 768px) { 
+  .product-form {
+    padding: 20px; 
+  }
+  .admin-product-form-page h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) { 
+  .admin-product-form-page .admin-page-container { 
+    padding: 15px;
+  }
+  .product-form {
+    padding: 15px; 
+  }
+  .admin-product-form-page h2 {
+    font-size: 1.3rem;
+  }
+  .product-form label {
+    font-size: 0.9rem;
+  }
+  .product-form input[type="text"],
+  .product-form input[type="number"],
+  .product-form textarea {
+    font-size: 0.95rem;
+    padding: 9px 10px;
+  }
+  .product-form .admin-button {
+    font-size: 0.9rem;
+    padding: 9px 15px;
+    width: 100%; 
+    margin-bottom: 10px; 
+  }
+  .product-form .admin-button:last-child {
+    margin-bottom: 0;
+  }
+  .product-form .form-actions {
+    flex-direction: column; 
+    gap: 0; 
+  }
+}

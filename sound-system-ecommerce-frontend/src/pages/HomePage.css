@@ -1,0 +1,168 @@
+/* src/pages/HomePage.css */
+.homepage-container {
+  /* Overall container for homepage content */
+  /* background-color: var(--color-background-main); /* Or keep it transparent to inherit from App.css .main-content */
+}
+
+/* Hero Section Styles */
+.hero-section {
+  background-color: var(--color-accent-medium); /* Muted beige accent for hero */
+  color: var(--color-text-on-dark-bg); /* Light text, assuming accent-medium is dark enough, or use black */
+  padding: 60px 20px;
+  text-align: center;
+  /* Optional: Add a subtle background image or pattern */
+  /* background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('your-hero-image.jpg'); */
+  /* background-size: cover; */
+  /* background-position: center; */
+}
+
+.hero-content h1 {
+  font-size: 2.8rem;
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: var(--color-text-primary); /* Black text on the accent-medium bg for better contrast */
+  font-weight: 700;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: var(--color-text-secondary); /* Secondary text color on accent-medium bg */
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-button {
+  background-color: var(--color-button-primary-bg); /* Black button */
+  color: var(--color-button-primary-text); /* Light text */
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: inline-block;
+}
+
+.hero-button:hover {
+  background-color: var(--color-button-primary-hover-bg); /* Darker gray hover */
+  transform: translateY(-2px);
+}
+
+/* Featured Products Section Styles */
+.featured-products-section {
+  padding: 40px 20px;
+  text-align: center;
+  background-color: var(--color-background-main); /* Main page background */
+}
+
+.featured-products-section h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: var(--color-text-primary);
+}
+
+/* Re-using .products-list from ProductsPage.css, ensure it's general enough */
+/* If .products-list from ProductsPage.css has specific margins/paddings not desired here,
+   you might need a more specific selector or a slightly different class */
+.homepage-products-list {
+  /* This class is added to allow specific overrides if needed, 
+     but it will inherit from .products-list from ProductsPage.css by default.
+     Ensure ProductsPage.css .products-list styles are suitable or adjust here.
+     For example, if ProductsPage.css .products-list has negative margins, 
+     you might not want them here or want to counteract them.
+  */
+  /* display: flex; /* Already in ProductsPage.css */
+  /* flex-wrap: wrap; /* Already in ProductsPage.css */
+  /* justify-content: center; /* Already in ProductsPage.css */
+  /* max-width: 1200px; /* Limit width if needed */
+  /* margin: 0 auto; /* Center if max-width is set */
+}
+
+/* Loading and Error messages - use global styles if defined in App.css */
+.loading-message, .error-message { /* Ensure these are styled globally or here */
+  text-align: center;
+  font-size: 1.1rem;
+  padding: 20px;
+  color: var(--color-text-secondary);
+}
+.error-message {
+  color: var(--color-error-text);
+}
+
+/* Categories Section Styles (Optional) */
+.categories-section {
+  padding: 40px 20px;
+  text-align: center;
+  background-color: var(--color-background-card); /* Card background for this section */
+}
+
+.categories-section h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: var(--color-text-primary);
+}
+
+.category-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.category-link-item {
+  background-color: var(--color-accent-medium);
+  color: var(--color-text-on-light-accent); /* Assuming black text on accent */
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  border: 1px solid var(--color-border);
+}
+
+.category-link-item:hover {
+  background-color: var(--color-button-secondary-hover-bg); /* Use secondary hover */
+  color: var(--color-text-on-light-accent);
+}
+
+/* --- Responsive adjustments for HomePage --- */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  .hero-button {
+    padding: 10px 25px;
+    font-size: 1rem;
+  }
+  .featured-products-section h2,
+  .categories-section h2 {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    padding: 40px 15px;
+  }
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+  .hero-subtitle {
+    font-size: 0.9rem;
+  }
+  .featured-products-section,
+  .categories-section {
+    padding: 30px 15px;
+  }
+  .category-link-item {
+    font-size: 0.9rem;
+    padding: 8px 15px;
+    flex-basis: calc(50% - 10px); /* Two categories per row on small mobile */
+    text-align: center;
+  }
+}

@@ -1,0 +1,128 @@
+/* src/components/common/Navbar.css */
+.navbar {
+  background-color: var(--color-text-primary); /* Black background */
+  padding: 1rem 1.5rem; /* Adjusted horizontal padding for overall navbar */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative; 
+  z-index: 1000; 
+}
+
+.navbar-brand {
+  /* Ensure the brand itself has some space if needed, though navbar padding should handle it */
+  /* margin-left: 10px; /* Example if padding on .navbar isn't enough for the logo specifically */
+}
+
+.navbar-logo {
+  color: var(--color-text-on-dark-bg); 
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 0.25rem 0; /* Added some vertical padding for click area */
+}
+
+.navbar-links {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex; 
+  align-items: center;
+}
+
+.navbar-links li {
+  margin-left: 10px; /* Slightly reduced margin between items */
+}
+
+.navbar-links li:first-child {
+    margin-left: 0; /* No left margin for the first item if items are closely packed */
+}
+
+.navbar-links li a,
+.navbar-button-link {
+  color: var(--color-text-on-dark-bg); 
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 0.75rem 1rem; /* Adjusted padding for a more button-like feel */
+  display: block; 
+  background: none; 
+  border: none; /* Base border reset for button-link */
+  border-bottom: 2px solid transparent; /* Transparent border initially for spacing */
+  cursor: pointer; 
+  font-family: inherit; 
+  transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out; /* Added border transition */
+}
+
+.navbar-links li a:hover,
+.navbar-button-link:hover,
+.navbar-links li a.active-link, /* Assuming you might add an active class via NavLink */
+.navbar-button-link.active-link {
+  color: var(--color-accent-medium); 
+  border-bottom-color: var(--color-accent-medium); /* Accent color for border on hover/active */
+  /* text-decoration: underline; /* Can remove if border provides enough feedback */
+}
+
+.navbar-cart-link {
+  /* Inherits styles */
+}
+
+.navbar-toggler {
+  display: none; 
+  font-size: 1.8rem;
+  color: var(--color-text-on-dark-bg); 
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+/* --- Mobile Styles --- */
+@media (max-width: 768px) { 
+  .navbar {
+    padding: 1rem; /* Reduce padding on mobile for more space */
+  }
+  .navbar-toggler {
+    display: block; 
+  }
+
+  .navbar-links {
+    display: none; 
+    flex-direction: column; 
+    width: 100%;
+    position: absolute; 
+    top: 100%; 
+    left: 0;
+    background-color: var(--color-text-primary); 
+    padding: 0.5rem 0; /* Adjusted padding for mobile dropdown */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  }
+
+  .navbar-links.active {
+    display: flex; 
+  }
+
+  .navbar-links li {
+    margin-left: 0; 
+    width: 100%;
+    text-align: center; 
+  }
+
+  .navbar-links li a,
+  .navbar-button-link {
+    padding: 0.8rem 1rem; 
+    border-bottom: 1px solid #444; /* Separator for mobile view */
+    /* The 2px transparent border-bottom from desktop is overridden here */
+  }
+  
+  .navbar-links li:last-child a,
+  .navbar-links li:last-child .navbar-button-link {
+    border-bottom: none; 
+  }
+
+  .navbar-links li a:hover,
+  .navbar-button-link:hover {
+    background-color: #333333; 
+    color: var(--color-text-on-dark-bg); 
+    border-bottom-color: #444; /* Keep border color consistent with item separator on hover */
+    /* text-decoration: none; /* Already set by base */
+  }
+}

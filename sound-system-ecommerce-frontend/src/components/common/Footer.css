@@ -1,0 +1,25 @@
+/* src/components/common/Footer.css */
+.footer {
+  background-color: var(--color-text-primary); /* Black background, same as Navbar */
+  color: var(--color-text-on-dark-bg);       /* Light text (e.g., #F2F2F2) */
+  text-align: center;
+  padding: 30px 20px; /* Increased padding slightly for better spacing */
+  /* Ensure it's at the bottom if content is short - this is handled by .App flex styles already */
+}
+
+.footer p {
+  margin: 8px 0; /* Slightly adjusted margin for better readability */
+  font-size: 0.9rem; /* Adjusted font size */
+}
+
+.footer a {
+  color: var(--color-accent-medium); /* Muted beige/gray-brown for links on dark background */
+  text-decoration: none;
+  margin: 0 5px; /* Keep existing margin */
+  transition: color 0.2s ease-in-out; /* Smooth transition for hover */
+}
+
+.footer a:hover {
+  color: var(--color-text-on-dark-bg); /* Light text on hover, e.g., #F2F2F2 */
+  text-decoration: underline;
+}

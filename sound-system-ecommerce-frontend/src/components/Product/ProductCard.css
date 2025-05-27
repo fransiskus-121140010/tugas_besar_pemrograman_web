@@ -1,0 +1,110 @@
+/* src/components/Product/ProductCard.css */
+.product-card {
+  border: 1px solid var(--color-border); /* Use accent color for border */
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 15px;
+  flex-basis: calc(33.333% - 30px); 
+  max-width: 320px;
+  min-width: 280px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.08); /* Slightly softer shadow */
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-background-card); /* Light beige for card background */
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12); /* Slightly enhanced shadow on hover */
+}
+
+.product-card-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 1px solid var(--color-border-light); /* Light border below image */
+}
+
+.product-card-body {
+  padding: 15px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card-name {
+  font-size: 1.2rem;
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: var(--color-text-primary); /* Black for name */
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Standard property for line clamping */
+  line-clamp: 2;         /* Standard property for line clamping - ADDED */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* min-height: 2.4em; /* Approx 2 lines height - Can be kept or removed depending on visual preference now that standard line-clamp is added */
+  height: 2.4em; /* Using height instead of min-height for more consistent results with line-clamp if needed, or remove if line-clamp alone works well */
+}
+
+.product-card-category {
+  font-size: 0.85rem; 
+  color: var(--color-accent-medium); 
+  margin-bottom: 10px;
+  text-transform: uppercase; 
+  letter-spacing: 0.5px; 
+}
+
+.product-card-price {
+  font-size: 1.15rem; 
+  font-weight: bold;
+  color: var(--color-text-primary); 
+  margin-bottom: 15px;
+  margin-top: auto; 
+}
+
+.product-card-button {
+  background-color: var(--color-button-primary-bg); 
+  color: var(--color-button-primary-text);       
+  border: none;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 500; 
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%; 
+  box-sizing: border-box;
+}
+
+.product-card-button:hover {
+  background-color: var(--color-button-primary-hover-bg); 
+}
+
+/* --- Media Queries for Product Card --- */
+@media (max-width: 992px) {
+  .product-card {
+    flex-basis: calc(50% - 30px); 
+    min-width: unset; 
+  }
+}
+
+@media (max-width: 576px) { 
+  .product-card {
+    flex-basis: calc(100% - 30px); 
+    max-width: 400px; 
+    margin-left: auto;  
+    margin-right: auto; 
+  }
+  .product-card-name {
+    /* min-height: auto; /* Original mobile style */
+    height: auto; /* Allow name to naturally take up to 2 lines or less on mobile */
+    /* If line-clamp is not perfectly working on all mobile browsers, 
+       you might need to ensure overflow: hidden and a fixed height or max-height.
+       However, line-clamp with -webkit-box-orient: vertical usually works well. */
+  }
+}

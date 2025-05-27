@@ -1,0 +1,145 @@
+/* src/pages/AuthForm.css */
+.auth-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(70vh - 50px);
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: var(--color-background-main); /* Page background */
+}
+
+.auth-form {
+  background-color: var(--color-background-card); /* Card background */
+  padding: 25px 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Keeping subtle black shadow */
+  width: 100%;
+  max-width: 400px; 
+  box-sizing: border-box;
+  border: 1px solid var(--color-border-light); /* Subtle border for the card */
+}
+
+.auth-form h2 {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 25px;
+  color: var(--color-text-primary); /* Black for heading */
+  font-size: 1.6rem;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: var(--color-text-secondary); /* Secondary text color for labels */
+  font-size: 0.95rem;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"] {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--color-border); /* Accent color for border */
+  border-radius: 4px;
+  box-sizing: border-box; 
+  font-size: 1rem;
+  background-color: var(--color-background-main); /* Light background for inputs */
+  color: var(--color-text-primary); /* Black text in inputs */
+  transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.form-group input:focus {
+  border-color: var(--color-accent-medium); /* Use accent for focus border */
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(182, 176, 159, 0.25); /* Shadow based on accent medium */
+}
+
+.auth-button {
+  width: 100%;
+  padding: 12px 15px;
+  background-color: var(--color-button-primary-bg); /* Primary button background (black) */
+  color: var(--color-button-primary-text);       /* Primary button text (light) */
+  border: none;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  font-weight: 500; /* Added font weight */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.auth-button:hover {
+  background-color: var(--color-button-primary-hover-bg); /* Darker gray for hover */
+}
+
+.auth-error {
+  color: var(--color-error-text);
+  background-color: var(--color-error-bg);
+  border: 1px solid var(--color-error-text); /* Or use a lighter shade like #f5c6cb */
+  padding: 10px 15px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.auth-success {
+  color: var(--color-success-text);
+  background-color: var(--color-success-bg);
+  border: 1px solid var(--color-success-text); /* Or use a lighter shade like #c3e6cb */
+  padding: 10px 15px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.auth-switch-prompt {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: var(--color-text-secondary); /* Secondary text for prompt */
+}
+
+.auth-switch-prompt a {
+  color: var(--color-link); /* Use global link color */
+  font-weight: 600; /* Make link slightly bolder */
+  text-decoration: none;
+}
+
+.auth-switch-prompt a:hover {
+  color: var(--color-link-hover); /* Use global link hover color */
+  text-decoration: underline;
+}
+
+/* --- Responsive adjustments for Auth Forms --- */
+@media (max-width: 480px) { 
+  .auth-form-container {
+    padding: 15px; 
+    min-height: calc(80vh - 40px); 
+  }
+  .auth-form {
+    padding: 20px; 
+  }
+  .auth-form h2 {
+    font-size: 1.4rem;
+  }
+  .form-group label {
+    font-size: 0.9rem;
+  }
+  .form-group input[type="text"],
+  .form-group input[type="email"],
+  .form-group input[type="password"] {
+    font-size: 0.95rem; 
+    padding: 9px 10px;
+  }
+  .auth-button {
+    font-size: 1rem;
+    padding: 10px 12px;
+  }
+}

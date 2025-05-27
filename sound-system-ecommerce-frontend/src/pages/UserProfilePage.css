@@ -1,0 +1,214 @@
+/* src/pages/UserProfilePage.css */
+.user-profile-page-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: calc(70vh - 50px);
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: var(--color-background-main); /* Use main background */
+}
+
+.user-profile-card {
+  background-color: var(--color-background-card); /* Card background */
+  padding: 25px 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Adjusted shadow */
+  width: 100%;
+  max-width: 500px;
+  box-sizing: border-box;
+  border: 1px solid var(--color-border-light); /* Subtle border for the card */
+}
+
+.user-profile-card h2 {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 25px;
+  color: var(--color-text-primary); /* Black for heading */
+  font-size: 1.6rem;
+}
+
+.profile-message {
+  padding: 10px 15px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.profile-message.success {
+  background-color: var(--color-success-bg); /* Use success variables */
+  color: var(--color-success-text);
+  border: 1px solid var(--color-success-text); /* Or a lighter border */
+}
+
+.profile-message.error {
+  background-color: var(--color-error-bg); /* Use error variables */
+  color: var(--color-error-text);
+  border: 1px solid var(--color-error-text); /* Or a lighter border */
+}
+
+.profile-info-item {
+  margin-bottom: 18px;
+  font-size: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--color-border-light); /* Lighter border for separator */
+  flex-wrap: wrap;
+}
+
+.profile-info-item:last-child {
+  border-bottom: none;
+}
+
+.profile-info-item strong {
+  color: var(--color-text-secondary); /* Secondary text for labels */
+  margin-right: 10px;
+  font-weight: 600;
+}
+
+.profile-info-item span {
+  color: var(--color-text-primary); /* Primary text for values */
+  word-break: break-all;
+  text-align: right;
+  flex-grow: 1;
+}
+
+.edit-profile-button { 
+  display: block;
+  width: auto;
+  min-width: 150px;
+  margin: 25px auto 0;
+  padding: 10px 20px;
+  background-color: var(--color-button-primary-bg); /* Primary button style */
+  color: var(--color-button-primary-text);
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 500; /* Added font weight */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.edit-profile-button:hover {
+  background-color: var(--color-button-primary-hover-bg); /* Primary button hover */
+}
+
+/* Styles for the edit form */
+.profile-edit-form .form-group {
+  margin-bottom: 18px;
+}
+
+.profile-edit-form label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: var(--color-text-secondary); /* Secondary text for labels */
+  font-size: 0.9rem;
+}
+
+.profile-edit-form input[type="text"],
+.profile-edit-form input[type="email"] {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--color-border); /* Accent border for inputs */
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 0.95rem;
+  background-color: var(--color-background-main); /* Light background for inputs */
+  color: var(--color-text-primary); /* Black text in inputs */
+  transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.profile-edit-form input[type="email"]:disabled {
+  background-color: var(--color-accent-medium); /* Muted beige for disabled bg */
+  opacity: 0.7; /* Slightly transparent */
+  cursor: not-allowed;
+  color: var(--color-text-secondary); /* Muted text color */
+}
+
+.profile-edit-form input:focus {
+  border-color: var(--color-accent-medium); /* Accent for focus border */
+  outline: none;
+  box-shadow: 0 0 0 0.1rem rgba(182, 176, 159, 0.25); /* Shadow based on accent medium */
+}
+
+.profile-edit-form .form-actions {
+  margin-top: 25px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.profile-edit-form .admin-button { /* Re-using .admin-button for consistency if defined globally or copy styles */
+    padding: 9px 18px;
+    font-size: 0.95rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: 500; /* Added */
+}
+
+.profile-edit-form .admin-button.save-button {
+    background-color: var(--color-button-primary-bg); /* Primary action for save */
+    color: var(--color-button-primary-text);
+}
+.profile-edit-form .admin-button.save-button:hover {
+    background-color: var(--color-button-primary-hover-bg);
+}
+
+.profile-edit-form .admin-button.cancel-button {
+    background-color: var(--color-button-secondary-bg); /* Secondary action for cancel */
+    color: var(--color-button-secondary-text);
+}
+.profile-edit-form .admin-button.cancel-button:hover {
+    background-color: var(--color-button-secondary-hover-bg);
+}
+
+/* --- Responsive adjustments for User Profile Page --- */
+@media (max-width: 480px) { 
+  .user-profile-page-container {
+    padding: 15px; 
+  }
+  .user-profile-card {
+    padding: 20px; 
+  }
+  .user-profile-card h2 {
+    font-size: 1.4rem;
+  }
+  .profile-info-item {
+    font-size: 0.9rem; 
+    flex-direction: column; 
+    align-items: flex-start; 
+  }
+  .profile-info-item strong {
+    margin-bottom: 5px; 
+  }
+  .profile-info-item span {
+    text-align: left; 
+  }
+  .profile-edit-form label {
+    font-size: 0.85rem;
+  }
+  .profile-edit-form input[type="text"],
+  .profile-edit-form input[type="email"] {
+    font-size: 0.9rem;
+    padding: 8px 10px;
+  }
+  .profile-edit-form .admin-button { /* Or use a more generic .button-form-action */
+    font-size: 0.9rem;
+    padding: 8px 15px;
+    width: 100%; 
+    margin-bottom: 10px; 
+  }
+  .profile-edit-form .form-actions {
+    flex-direction: column; 
+    gap: 0; /* Remove gap if buttons have margin-bottom */
+  }
+  .profile-edit-form .form-actions .admin-button:last-child {
+      margin-bottom: 0; 
+  }
+}

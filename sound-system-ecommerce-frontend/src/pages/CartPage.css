@@ -1,0 +1,271 @@
+/* src/pages/CartPage.css */
+.cart-page {
+  padding: 20px;
+  max-width: 900px;
+  margin: 20px auto;
+  background-color: var(--color-background-main); /* Use main background for the page */
+  border-radius: 8px; 
+  /* box-shadow: 0 2px 8px rgba(0,0,0,0.05); /* Optional: Remove shadow or use a very light one */
+}
+
+.cart-page h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 1.8rem; 
+  color: var(--color-text-primary); /* Black for heading */
+}
+
+.cart-item {
+  display: flex;
+  align-items: flex-start; 
+  border: 1px solid var(--color-border); /* Accent color for border */
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  background-color: var(--color-background-card); /* Card background for each item */
+  gap: 15px; 
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05); /* Subtle shadow for cards */
+}
+
+.cart-item-image-container {
+  width: 100px;
+  min-width: 100px; 
+  height: 100px;
+}
+
+.cart-item-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid var(--color-border-light); /* Light border for image */
+}
+
+.cart-item-details {
+  flex-grow: 1;
+}
+
+.cart-item-details h2 {
+  font-size: 1.2rem;
+  margin-top: 0;
+  margin-bottom: 5px;
+  color: var(--color-text-primary); /* Black for item name */
+}
+
+.cart-item-details p {
+  margin: 5px 0 10px 0;
+  font-size: 0.9rem;
+  color: var(--color-text-secondary); /* Secondary text for price/qty labels if any */
+}
+
+/* Styles for quantity controls */
+.cart-item-quantity-controls {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.quantity-button {
+  background-color: var(--color-background-main); /* Light gray background */
+  border: 1px solid var(--color-border);       /* Accent border */
+  color: var(--color-text-primary);           /* Black text */
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 4px;
+  line-height: 1;
+  transition: background-color 0.2s ease;
+}
+
+.quantity-button:hover:not(:disabled) {
+  background-color: var(--color-accent-medium); /* Accent medium on hover */
+  color: var(--color-text-on-dark-bg); /* Light text on hover if bg becomes dark enough */
+}
+
+.quantity-button:disabled {
+  background-color: var(--color-background-card); /* Lighter, disabled look */
+  color: var(--color-accent-medium); /* Muted text color */
+  cursor: not-allowed;
+  border-color: var(--color-border-light);
+}
+
+.quantity-input {
+  width: 50px;
+  text-align: center;
+  margin: 0 5px;
+  padding: 6px 8px;
+  border: 1px solid var(--color-border); /* Accent border */
+  border-radius: 4px;
+  font-size: 1rem;
+  background-color: var(--color-background-main); /* Light background for input */
+  color: var(--color-text-primary); /* Black text */
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+.quantity-input::-webkit-outer-spin-button,
+.quantity-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* End quantity control styles */
+
+.cart-item-subtotal {
+  min-width: 120px; 
+  text-align: right;
+  margin-left: auto; 
+}
+.cart-item-subtotal p {
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 1rem; 
+  color: var(--color-text-primary); /* Black for subtotal */
+}
+
+.cart-item-remove-button {
+  background-color: var(--color-button-danger-bg); /* Use danger button variables */
+  color: var(--color-button-danger-text);
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  display: block; 
+  width: 100%; 
+  margin-top: 5px; 
+  transition: background-color 0.2s ease;
+}
+
+.cart-item-remove-button:hover {
+  background-color: var(--color-button-danger-hover-bg);
+}
+
+.cart-summary {
+  margin-top: 30px;
+  padding: 20px; 
+  border-top: 2px solid var(--color-border); /* Accent border */
+  text-align: right;
+  background-color: var(--color-background-card); /* Card background for summary */
+  border-radius: 8px; /* Rounded corners for summary box */
+  /* border-radius: 0 0 8px 8px; /* Or if page has full border radius */
+}
+
+.cart-summary h2 {
+  margin-top:0; 
+  margin-bottom: 20px;
+  font-size: 1.5rem; 
+  color: var(--color-text-primary); /* Black for cart total heading */
+}
+
+.button-primary { /* General primary button style */
+  background-color: var(--color-button-primary-bg);
+  color: var(--color-button-primary-text);
+  border: none;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500; /* Added */
+  display: inline-block;
+  transition: background-color 0.2s ease;
+}
+
+.button-primary:hover {
+  background-color: var(--color-button-primary-hover-bg);
+}
+
+.checkout-button { /* Specific class for checkout, inherits from button-primary */
+  font-size: 1.1rem;
+  padding: 12px 25px;
+}
+
+.cart-actions { 
+  text-align: right; 
+  margin-bottom: 20px; 
+}
+
+.button-danger { /* General danger button style */
+  background-color: var(--color-button-danger-bg);
+  color: var(--color-button-danger-text);
+  border: none;
+  padding: 10px 15px;
+  text-decoration: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  display: inline-block;
+  transition: background-color 0.2s ease;
+}
+
+.button-danger:hover {
+  background-color: var(--color-button-danger-hover-bg);
+}
+
+/* --- Responsive adjustments for Cart Page --- */
+@media (max-width: 768px) { 
+  .cart-page {
+    padding: 15px;
+    margin: 15px auto; /* Ensure centering */
+    box-shadow: none;
+    background-color: transparent; /* Make page transparent, rely on card backgrounds */
+  }
+  .cart-item {
+    /* Adjustments for tablet if needed, current stacking starts at 576px */
+  }
+  .cart-item-details h2 {
+    font-size: 1.1rem;
+  }
+  .cart-item-subtotal {
+    min-width: 100px; 
+    text-align: left; 
+    margin-left: 0; 
+    margin-top: 10px; 
+  }
+   .cart-summary {
+    text-align: center; 
+    border-radius: 8px; /* Full border radius on mobile */
+  }
+  .checkout-button {
+    width: 100%; 
+  }
+  .cart-actions {
+    text-align: center; 
+  }
+}
+
+@media (max-width: 576px) { 
+  .cart-page h1 {
+    font-size: 1.5rem;
+  }
+  .cart-item {
+    flex-direction: column; 
+    align-items: center; 
+    text-align: center; 
+    padding: 10px; /* Reduced padding for smaller cards */
+  }
+  .cart-item-image-container {
+    margin-right: 0;
+    margin-bottom: 15px; 
+  }
+  .cart-item-details {
+    width: 100%; 
+    margin-bottom: 10px; 
+  }
+  .cart-item-quantity-controls {
+    justify-content: center; 
+    margin-bottom: 10px;
+  }
+  .cart-item-subtotal {
+    text-align: center; 
+    margin-top: 0;
+    width: 100%;
+  }
+  .cart-item-subtotal p {
+    margin-bottom: 5px;
+  }
+  .cart-item-remove-button {
+    margin-top: 10px; 
+  }
+}
